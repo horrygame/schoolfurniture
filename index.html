@@ -84,23 +84,13 @@
         }
         
         .hero {
-            background: url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
             height: 500px;
             display: flex;
             align-items: center;
             color: white;
             text-align: center;
             position: relative;
-        }
-        
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.5);
         }
         
         .hero-content {
@@ -172,7 +162,12 @@
         .product-img {
             height: 200px;
             width: 100%;
-            object-fit: cover;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 4rem;
         }
         
         .product-info {
@@ -365,8 +360,13 @@
         
         .modal-image {
             width: 100%;
-            height: 250px;
-            object-fit: cover;
+            height: 200px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 3rem;
             border-radius: 4px;
         }
         
@@ -440,7 +440,9 @@
             <div class="products">
                 <!-- Продукт 1 -->
                 <div class="product-card" data-id="1">
-                    <img src="https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=80" alt="Школьные парты" class="product-img">
+                    <div class="product-img">
+                        <i class="fas fa-chair"></i>
+                    </div>
                     <div class="product-info">
                         <h3>Ученические парты</h3>
                         <p>Эргономичные парты с регулировкой высоты для комфортного обучения</p>
@@ -451,7 +453,9 @@
                 
                 <!-- Продукт 2 -->
                 <div class="product-card" data-id="2">
-                    <img src="https://images.unsplash.com/photo-1572314493769-03a6b2672354?ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=80" alt="Стулья" class="product-img">
+                    <div class="product-img">
+                        <i class="fas fa-couch"></i>
+                    </div>
                     <div class="product-info">
                         <h3>Ученические стулья</h3>
                         <p>Удобные стулья с ортопедической спинкой для правильной осанки</p>
@@ -462,7 +466,9 @@
                 
                 <!-- Продукт 3 -->
                 <div class="product-card" data-id="3">
-                    <img src="https://images.unsplash.com/photo-1598301252030-41eb5d4e35c9?ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=80" alt="Шкафы" class="product-img">
+                    <div class="product-img">
+                        <i class="fas fa-archive"></i>
+                    </div>
                     <div class="product-info">
                         <h3>Шкафы для классов</h3>
                         <p>Вместительные шкафы для хранения учебных материалов и личных вещей</p>
@@ -473,7 +479,9 @@
                 
                 <!-- Продукт 4 -->
                 <div class="product-card" data-id="4">
-                    <img src="https://images.unsplash.com/photo-1598301257985-0ddfa55f6f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=80" alt="Стол учителя" class="product-img">
+                    <div class="product-img">
+                        <i class="fas fa-desktop"></i>
+                    </div>
                     <div class="product-info">
                         <h3>Стол учителя</h3>
                         <p>Функциональный и просторный стол с системой хранения документов</p>
@@ -484,7 +492,9 @@
                 
                 <!-- Продукт 5 -->
                 <div class="product-card" data-id="5">
-                    <img src="https://images.unsplash.com/photo-1542744095-fcf48d80b0fd?ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=80" alt="Компьютерные столы" class="product-img">
+                    <div class="product-img">
+                        <i class="fas fa-laptop"></i>
+                    </div>
                     <div class="product-info">
                         <h3>Компьютерные столы</h3>
                         <p>Специализированные столы для компьютерных классов с cable-менеджментом</p>
@@ -495,7 +505,9 @@
                 
                 <!-- Продукт 6 -->
                 <div class="product-card" data-id="6">
-                    <img src="https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=80" alt="Лабораторные столы" class="product-img">
+                    <div class="product-img">
+                        <i class="fas fa-flask"></i>
+                    </div>
                     <div class="product-info">
                         <h3>Лабораторные столы</h3>
                         <p>Столы для кабинетов химии и физики с устойчивой к реактивам поверхностью</p>
@@ -506,7 +518,9 @@
                 
                 <!-- Продукт 7 -->
                 <div class="product-card" data-id="7">
-                    <img src="https://images.unsplash.com/photo-1505842381624-c6b0579625a5?ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=80" alt="Стеллажи" class="product-img">
+                    <div class="product-img">
+                        <i class="fas fa-book"></i>
+                    </div>
                     <div class="product-info">
                         <h3>Стеллажи для библиотеки</h3>
                         <p>Вместительные стеллажи для школьных библиотек и медиатек</p>
@@ -517,7 +531,9 @@
                 
                 <!-- Продукт 8 -->
                 <div class="product-card" data-id="8">
-                    <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=80" alt="Мебель для учительской" class="product-img">
+                    <div class="product-img">
+                        <i class="fas fa-users"></i>
+                    </div>
                     <div class="product-info">
                         <h3>Мебель для учительской</h3>
                         <p>Комфортная мебель для комнаты отдыха преподавателей</p>
@@ -528,7 +544,9 @@
                 
                 <!-- Продукт 9 -->
                 <div class="product-card" data-id="9">
-                    <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=80" alt="Мебель для актового зала" class="product-img">
+                    <div class="product-img">
+                        <i class="fas fa-theater-masks"></i>
+                    </div>
                     <div class="product-info">
                         <h3>Мебель для актового зала</h3>
                         <p>Стильные и удобные кресла и стулья для актовых залов</p>
@@ -539,7 +557,9 @@
                 
                 <!-- Продукт 10 -->
                 <div class="product-card" data-id="10">
-                    <img src="https://images.unsplash.com/photo-1533090368676-1fd25485db88?ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=80" alt="Спортивные скамейки" class="product-img">
+                    <div class="product-img">
+                        <i class="fas fa-dumbbell"></i>
+                    </div>
                     <div class="product-info">
                         <h3>Спортивные скамейки</h3>
                         <p>Прочные скамейки для раздевалок и спортивных залов</p>
@@ -550,7 +570,9 @@
                 
                 <!-- Продукт 11 -->
                 <div class="product-card" data-id="11">
-                    <img src="https://images.unsplash.com/photo-1598301258006-4c2e5c5c5b5d?ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=80" alt="Мебель для столовой" class="product-img">
+                    <div class="product-img">
+                        <i class="fas fa-utensils"></i>
+                    </div>
                     <div class="product-info">
                         <h3>Мебель для столовой</h3>
                         <p>Столы и стулья для школьных столовых из износостойких материалов</p>
@@ -561,7 +583,9 @@
                 
                 <!-- Продукт 12 -->
                 <div class="product-card" data-id="12">
-                    <img src="https://images.unsplash.com/photo-1598301258006-4c2e5c5c5b5d?ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=80" alt="Мебель для дошкольников" class="product-img">
+                    <div class="product-img">
+                        <i class="fas fa-puzzle-piece"></i>
+                    </div>
                     <div class="product-info">
                         <h3>Мебель для дошкольников</h3>
                         <p>Яркая и безопасная мебель для детских садов и начальных классов</p>
@@ -687,7 +711,9 @@
                 <h2 id="modal-title">Название товара</h2>
             </div>
             <div class="modal-body">
-                <img id="modal-image" src="" alt="Изображение товара" class="modal-image">
+                <div class="modal-image">
+                    <i class="fas fa-chair" id="modal-icon"></i>
+                </div>
                 <p id="modal-description">Описание товара</p>
                 <p class="price" id="modal-price">Цена: 0 руб.</p>
                 
@@ -722,7 +748,7 @@
                 title: "Ученические парты",
                 description: "Эргономичные парты с регулировкой высоты для комфортного обучения. Идеально подходят для учащихся всех возрастов. Изготовлены из экологически чистых материалов, имеют прочную конструкцию и современный дизайн.",
                 price: "от 3 500 руб.",
-                
+                icon: "fa-chair",
                 dimensions: "120x60x75 см",
                 weight: "15 кг",
                 colors: "5 вариантов",
@@ -732,7 +758,7 @@
                 title: "Ученические стулья",
                 description: "Удобные стулья с ортопедической спинкой для правильной осанки. Регулируемая высота сиденья и подставка для ног обеспечивают комфортную посадку для детей разного роста.",
                 price: "от 2 200 руб.",
-                
+                icon: "fa-couch",
                 dimensions: "45x50x80 см",
                 weight: "7 кг",
                 colors: "8 вариантов",
@@ -742,7 +768,7 @@
                 title: "Шкафы для классов",
                 description: "Вместительные шкафы для хранения учебных материалов и личных вещей. Имеют несколько отделений, полки и крючки для одежды. Надежные замки обеспечивают сохранность содержимого.",
                 price: "от 8 900 руб.",
-                
+                icon: "fa-archive",
                 dimensions: "180x40x200 см",
                 weight: "60 кг",
                 colors: "4 варианта",
@@ -752,7 +778,7 @@
                 title: "Стол учителя",
                 description: "Функциональный и просторный стол с системой хранения документов. Вместительные ящики и полки позволяют организовать рабочее пространство максимально эффективно.",
                 price: "от 12 500 руб.",
-                
+                icon: "fa-desktop",
                 dimensions: "140x70x75 см",
                 weight: "45 кг",
                 colors: "3 варианта",
@@ -762,7 +788,7 @@
                 title: "Компьютерные столы",
                 description: "Специализированные столы для компьютерных классов с cable-менеджментом. Имеют специальные отделения для системного блока, выдвижную полку для клавиатуры и отверстия для проводов.",
                 price: "от 7 800 руб.",
-
+                icon: "fa-laptop",
                 dimensions: "120x70x75 см",
                 weight: "25 кг",
                 colors: "2 варианта",
@@ -772,7 +798,7 @@
                 title: "Лабораторные столы",
                 description: "Столы для кабинетов химии и физики с устойчивой к реактивам поверхностью. Оснащены розетками, подачей воды и газа. Имеют защитные бортики и ящики для оборудования.",
                 price: "от 15 300 руб.",
- 
+                icon: "fa-flask",
                 dimensions: "180x90x85 см",
                 weight: "85 кг",
                 colors: "Серый, бежевый",
@@ -782,7 +808,7 @@
                 title: "Стеллажи для библиотеки",
                 description: "Вместительные стеллажи для школьных библиотек и медиатек. Регулируемые полки позволяют размещать книги разных форматов. Устойчивая конструкция обеспечивает безопасность.",
                 price: "от 9 700 руб.",
-
+                icon: "fa-book",
                 dimensions: "200x40x210 см",
                 weight: "70 кг",
                 colors: "4 варианта",
@@ -792,7 +818,7 @@
                 title: "Мебель для учительской",
                 description: "Комфортная мебель для комнаты отдыха преподавателей. Включает диваны, кресла, кофейные столы и шкафы для личных вещей. Создает уютную атмосферу для отдыха между уроками.",
                 price: "от 18 900 руб.",
-              
+                icon: "fa-users",
                 dimensions: "Разные размеры",
                 weight: "Зависит от предмета",
                 colors: "6 вариантов",
@@ -802,7 +828,7 @@
                 title: "Мебель для актового зала",
                 description: "Стильные и удобные кресла и стулья для актовых залов. Складывающаяся конструкция позволяет экономить пространство. Имеют мягкие сиденья и удобные подлокотники.",
                 price: "от 4 200 руб./шт",
-       
+                icon: "fa-theater-masks",
                 dimensions: "55x50x85 см",
                 weight: "8 кг",
                 colors: "Красный, синий, зеленый, черный",
@@ -812,7 +838,7 @@
                 title: "Спортивные скамейки",
                 description: "Прочные скамейки для раздевалок и спортивных залов. Влагостойкое покрытие легко очищается. Металлический каркас обеспечивает долговечность и устойчивость.",
                 price: "от 6 500 руб.",
-                
+                icon: "fa-dumbbell",
                 dimensions: "120x40x45 см",
                 weight: "12 кг",
                 colors: "2 варианта",
@@ -822,7 +848,7 @@
                 title: "Мебель для столовой",
                 description: "Столы и стулья для школьных столовых из износостойких материалов. Устойчивы к влаге и частой cleaning. Закругленные углы обеспечивают безопасность учащихся.",
                 price: "от 5 800 руб.",
-    
+                icon: "fa-utensils",
                 dimensions: "Стол: 160x80x75 см, Стул: 45x45x85 см",
                 weight: "Стол: 25 кг, Стул: 6 кг",
                 colors: "Желтый, зеленый, оранжевый",
@@ -832,7 +858,7 @@
                 title: "Мебель для дошкольников",
                 description: "Яркая и безопасная мебель для детских садов и начальных классов. Имеет закругленные углы, экологичные покрытия и соответствующие возрасту размеры. Способствует развитию и комфорту детей.",
                 price: "от 4 900 руб.",
-                
+                icon: "fa-puzzle-piece",
                 dimensions: "Парта: 100x50x55 см, Стул: 30x30x35 см",
                 weight: "Парта: 12 кг, Стул: 3 кг",
                 colors: "Яркие цвета",
@@ -868,7 +894,7 @@
                 document.getElementById("modal-title").textContent = product.title;
                 document.getElementById("modal-description").textContent = product.description;
                 document.getElementById("modal-price").textContent = product.price;
-                document.getElementById("modal-image").src = product.image;
+                document.getElementById("modal-icon").className = "fas " + product.icon;
                 document.getElementById("modal-dimensions").textContent = `Размеры: ${product.dimensions}`;
                 document.getElementById("modal-weight").textContent = `Вес: ${product.weight}`;
                 document.getElementById("modal-colors").textContent = `Доступные цвета: ${product.colors}`;
