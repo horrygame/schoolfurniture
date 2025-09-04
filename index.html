@@ -1,0 +1,917 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Школьная мебель - качественная мебель для образовательных учреждений</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #4a6fa5;
+            --secondary-color: #6e9887;
+            --accent-color: #e76f51;
+            --light-color: #f8f9fa;
+            --dark-color: #2b2d42;
+            --gray-color: #8d99ae;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .logo h1 {
+            font-size: 1.8rem;
+        }
+        
+        .logo-icon {
+            font-size: 2rem;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 1.5rem;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            padding: 0.5rem;
+            border-radius: 4px;
+        }
+        
+        nav a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        
+        .hero {
+            background: url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            color: white;
+            text-align: center;
+            position: relative;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .hero h2 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 4px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+        
+        .btn:hover {
+            background-color: #d45a3c;
+            transform: translateY(-2px);
+        }
+        
+        section {
+            padding: 4rem 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--primary-color);
+        }
+        
+        .products {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .product-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            position: relative;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .product-img {
+            height: 200px;
+            width: 100%;
+            object-fit: cover;
+        }
+        
+        .product-info {
+            padding: 1.5rem;
+        }
+        
+        .product-info h3 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        .product-info p {
+            color: var(--gray-color);
+            margin-bottom: 1rem;
+        }
+        
+        .price {
+            font-weight: bold;
+            color: var(--accent-color);
+            font-size: 1.2rem;
+        }
+        
+        .features {
+            background-color: var(--light-color);
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .feature {
+            text-align: center;
+            padding: 2rem;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        
+        .calculator {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+        
+        .form-group select, .form-group input {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+        
+        .result {
+            margin-top: 1.5rem;
+            padding: 1rem;
+            background-color: #f8f9fa;
+            border-radius: 4px;
+            text-align: center;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+        
+        .contact {
+            background-color: var(--light-color);
+        }
+        
+        .contact-form {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .social-links a {
+            color: white;
+            font-size: 1.5rem;
+            transition: color 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            color: var(--accent-color);
+        }
+        
+        /* Модальное окно */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.5);
+        }
+        
+        .modal-content {
+            background-color: #fefefe;
+            margin: 10% auto;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            width: 80%;
+            max-width: 600px;
+            position: relative;
+            animation: modalopen 0.5s;
+        }
+        
+        @keyframes modalopen {
+            from {opacity: 0; transform: translateY(-60px);}
+            to {opacity: 1; transform: translateY(0);}
+        }
+        
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        
+        .close:hover {
+            color: black;
+        }
+        
+        .modal-header {
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .modal-body {
+            padding: 20px 0;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        .modal-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 4px;
+        }
+        
+        .modal-details {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-top: 15px;
+        }
+        
+        .detail-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .detail-icon {
+            color: var(--primary-color);
+        }
+        
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .hero h2 {
+                font-size: 2rem;
+            }
+            
+            .modal-details {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <span class="logo-icon">📚</span>
+                <h1>Школьная мебель</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#products">Продукция</a></li>
+                    <li><a href="#features">Преимущества</a></li>
+                    <li><a href="#calculator">Калькулятор</a></li>
+                    <li><a href="#contact">Контакты</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h2>Качественная мебель для современных школ</h2>
+            <p>Создаем комфортную образовательную среду для учеников и преподавателей</p>
+            <a href="#products" class="btn">Смотреть каталог</a>
+        </div>
+    </section>
+
+    <section id="products" class="products-section">
+        <div class="container">
+            <h2 class="section-title">Наша продукция</h2>
+            <div class="products">
+                <!-- Продукт 1 -->
+                <div class="product-card" data-id="1">
+                    <img src="https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=80" alt="Школьные парты" class="product-img">
+                    <div class="product-info">
+                        <h3>Ученические парты</h3>
+                        <p>Эргономичные парты с регулировкой высоты для комфортного обучения</p>
+                        <p class="price">от 3 500 руб.</p>
+                        <button class="btn details-btn">Подробнее</button>
+                    </div>
+                </div>
+                
+                <!-- Продукт 2 -->
+                <div class="product-card" data-id="2">
+                    <img src="https://images.unsplash.com/photo-1572314493769-03a6b2672354?ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=80" alt="Стулья" class="product-img">
+                    <div class="product-info">
+                        <h3>Ученические стулья</h3>
+                        <p>Удобные стулья с ортопедической спинкой для правильной осанки</p>
+                        <p class="price">от 2 200 руб.</p>
+                        <button class="btn details-btn">Подробнее</button>
+                    </div>
+                </div>
+                
+                <!-- Продукт 3 -->
+                <div class="product-card" data-id="3">
+                    <img src="https://images.unsplash.com/photo-1598301252030-41eb5d4e35c9?ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=80" alt="Шкафы" class="product-img">
+                    <div class="product-info">
+                        <h3>Шкафы для классов</h3>
+                        <p>Вместительные шкафы для хранения учебных материалов и личных вещей</p>
+                        <p class="price">от 8 900 руб.</p>
+                        <button class="btn details-btn">Подробнее</button>
+                    </div>
+                </div>
+                
+                <!-- Продукт 4 -->
+                <div class="product-card" data-id="4">
+                    <img src="https://images.unsplash.com/photo-1598301257985-0ddfa55f6f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=80" alt="Стол учителя" class="product-img">
+                    <div class="product-info">
+                        <h3>Стол учителя</h3>
+                        <p>Функциональный и просторный стол с системой хранения документов</p>
+                        <p class="price">от 12 500 руб.</p>
+                        <button class="btn details-btn">Подробнее</button>
+                    </div>
+                </div>
+                
+                <!-- Продукт 5 -->
+                <div class="product-card" data-id="5">
+                    <img src="https://images.unsplash.com/photo-1542744095-fcf48d80b0fd?ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=80" alt="Компьютерные столы" class="product-img">
+                    <div class="product-info">
+                        <h3>Компьютерные столы</h3>
+                        <p>Специализированные столы для компьютерных классов с cable-менеджментом</p>
+                        <p class="price">от 7 800 руб.</p>
+                        <button class="btn details-btn">Подробнее</button>
+                    </div>
+                </div>
+                
+                <!-- Продукт 6 -->
+                <div class="product-card" data-id="6">
+                    <img src="https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=80" alt="Лабораторные столы" class="product-img">
+                    <div class="product-info">
+                        <h3>Лабораторные столы</h3>
+                        <p>Столы для кабинетов химии и физики с устойчивой к реактивам поверхностью</p>
+                        <p class="price">от 15 300 руб.</p>
+                        <button class="btn details-btn">Подробнее</button>
+                    </div>
+                </div>
+                
+                <!-- Продукт 7 -->
+                <div class="product-card" data-id="7">
+                    <img src="https://images.unsplash.com/photo-1505842381624-c6b0579625a5?ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=80" alt="Стеллажи" class="product-img">
+                    <div class="product-info">
+                        <h3>Стеллажи для библиотеки</h3>
+                        <p>Вместительные стеллажи для школьных библиотек и медиатек</p>
+                        <p class="price">от 9 700 руб.</p>
+                        <button class="btn details-btn">Подробнее</button>
+                    </div>
+                </div>
+                
+                <!-- Продукт 8 -->
+                <div class="product-card" data-id="8">
+                    <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=80" alt="Мебель для учительской" class="product-img">
+                    <div class="product-info">
+                        <h3>Мебель для учительской</h3>
+                        <p>Комфортная мебель для комнаты отдыха преподавателей</p>
+                        <p class="price">от 18 900 руб.</p>
+                        <button class="btn details-btn">Подробнее</button>
+                    </div>
+                </div>
+                
+                <!-- Продукт 9 -->
+                <div class="product-card" data-id="9">
+                    <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=80" alt="Мебель для актового зала" class="product-img">
+                    <div class="product-info">
+                        <h3>Мебель для актового зала</h3>
+                        <p>Стильные и удобные кресла и стулья для актовых залов</p>
+                        <p class="price">от 4 200 руб./шт</p>
+                        <button class="btn details-btn">Подробнее</button>
+                    </div>
+                </div>
+                
+                <!-- Продукт 10 -->
+                <div class="product-card" data-id="10">
+                    <img src="https://images.unsplash.com/photo-1533090368676-1fd25485db88?ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=80" alt="Спортивные скамейки" class="product-img">
+                    <div class="product-info">
+                        <h3>Спортивные скамейки</h3>
+                        <p>Прочные скамейки для раздевалок и спортивных залов</p>
+                        <p class="price">от 6 500 руб.</p>
+                        <button class="btn details-btn">Подробнее</button>
+                    </div>
+                </div>
+                
+                <!-- Продукт 11 -->
+                <div class="product-card" data-id="11">
+                    <img src="https://images.unsplash.com/photo-1598301258006-4c2e5c5c5b5d?ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=80" alt="Мебель для столовой" class="product-img">
+                    <div class="product-info">
+                        <h3>Мебель для столовой</h3>
+                        <p>Столы и стулья для школьных столовых из износостойких материалов</p>
+                        <p class="price">от 5 800 руб.</p>
+                        <button class="btn details-btn">Подробнее</button>
+                    </div>
+                </div>
+                
+                <!-- Продукт 12 -->
+                <div class="product-card" data-id="12">
+                    <img src="https://images.unsplash.com/photo-1598301258006-4c2e5c5c5b5d?ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=80" alt="Мебель для дошкольников" class="product-img">
+                    <div class="product-info">
+                        <h3>Мебель для дошкольников</h3>
+                        <p>Яркая и безопасная мебель для детских садов и начальных классов</p>
+                        <p class="price">от 4 900 руб.</p>
+                        <button class="btn details-btn">Подробнее</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="features" class="features">
+        <div class="container">
+            <h2 class="section-title">Наши преимущества</h2>
+            <div class="features-grid">
+                <div class="feature">
+                    <div class="feature-icon">🌱</div>
+                    <h3>Экологичные материалы</h3>
+                    <p>Используем только безопасные и сертифицированные материалы</p>
+                </div>
+                
+                <div class="feature">
+                    <div class="feature-icon">⚙️</div>
+                    <h3>Надежность</h3>
+                    <p>Прочная конструкция с гарантией 5 лет на всю продукцию</p>
+                </div>
+                
+                <div class="feature">
+                    <div class="feature-icon">🎨</div>
+                    <h3>Индивидуальный дизайн</h3>
+                    <p>Возможность выбора цветов и конфигурации под ваши нужды</p>
+                </div>
+                
+                <div class="feature">
+                    <div class="feature-icon">🚚</div>
+                    <h3>Быстрая доставка</h3>
+                    <p>Доставим и установим мебель в течение 14 дней после заказа</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="calculator" class="calculator-section">
+        <div class="container">
+            <h2 class="section-title">Калькулятор стоимости</h2>
+            <div class="calculator">
+                <div class="form-group">
+                    <label for="product">Тип мебели:</label>
+                    <select id="product">
+                        <option value="3500">Ученическая парта (3 500 руб.)</option>
+                        <option value="2200">Ученический стул (2 200 руб.)</option>
+                        <option value="8900">Шкаф для класса (8 900 руб.)</option>
+                        <option value="12500">Стол учителя (12 500 руб.)</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="quantity">Количество:</label>
+                    <input type="number" id="quantity" min="1" value="1">
+                </div>
+                
+                <div class="form-group">
+                    <label for="color">Цвет:</label>
+                    <select id="color">
+                        <option value="1">Стандартный (без доплаты)</option>
+                        <option value="1.1">Древесный (+10%)</option>
+                        <option value="1.15">Яркий цвет (+15%)</option>
+                    </select>
+                </div>
+                
+                <button class="btn" onclick="calculatePrice()">Рассчитать стоимость</button>
+                
+                <div class="result" id="result">
+                    Общая стоимость: 0 руб.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Свяжитесь с нами</h2>
+            <div class="contact-form">
+                <div class="form-group">
+                    <label for="name">Ваше имя:</label>
+                    <input type="text" id="name" placeholder="Иван Иванов">
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Ваш email:</label>
+                    <input type="email" id="email" placeholder="example@mail.com">
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Сообщение:</label>
+                    <textarea id="message" placeholder="Введите ваше сообщение..."></textarea>
+                </div>
+                
+                <button class="btn" onclick="sendMessage()">Отправить сообщение</button>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container footer-content">
+            <p>© 2023 Школьная мебель. Все права защищены.</p>
+            <p>г. Москва, ул. Образовательная, д. 15</p>
+            <p>Телефон: +7 (495) 123-45-67</p>
+            
+            <div class="social-links">
+                <a href="#"><i class="fab fa-vk"></i></a>
+                <a href="#"><i class="fab fa-telegram"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Модальное окно -->
+    <div id="productModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="modal-header">
+                <h2 id="modal-title">Название товара</h2>
+            </div>
+            <div class="modal-body">
+                <img id="modal-image" src="" alt="Изображение товара" class="modal-image">
+                <p id="modal-description">Описание товара</p>
+                <p class="price" id="modal-price">Цена: 0 руб.</p>
+                
+                <div class="modal-details">
+                    <div class="detail-item">
+                        <i class="fas fa-ruler-combined detail-icon"></i>
+                        <span id="modal-dimensions">Размеры: 120x60x75 см</span>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fas fa-weight detail-icon"></i>
+                        <span id="modal-weight">Вес: 15 кг</span>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fas fa-paint-brush detail-icon"></i>
+                        <span id="modal-colors">Доступные цвета: 5</span>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fas fa-tools detail-icon"></i>
+                        <span id="modal-material">Материал: Массив березы</span>
+                    </div>
+                </div>
+                
+                <button class="btn" style="margin-top: 20px;">Добавить в корзину</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Данные о товарах
+        const products = {
+            1: {
+                title: "Ученические парты",
+                description: "Эргономичные парты с регулировкой высоты для комфортного обучения. Идеально подходят для учащихся всех возрастов. Изготовлены из экологически чистых материалов, имеют прочную конструкцию и современный дизайн.",
+                price: "от 3 500 руб.",
+                image: "https://yandex.ru/images/search?pos=0&from=tabbar&img_url=https%3A%2F%2Fshkolaklub.ru%2Fimg%2Fc%2F1268.jpg&text=%D0%BF%D0%B0%D1%80%D1%82%D0%B0+%D1%88%D0%BA%D0%BE%D0%BB%D1%8C%D0%BD%D0%B0%D1%8F&rpt=simage&lr=213",
+                dimensions: "120x60x75 см",
+                weight: "15 кг",
+                colors: "5 вариантов",
+                material: "Массив березы, ЛДСП"
+            },
+            2: {
+                title: "Ученические стулья",
+                description: "Удобные стулья с ортопедической спинкой для правильной осанки. Регулируемая высота сиденья и подставка для ног обеспечивают комфортную посадку для детей разного роста.",
+                price: "от 2 200 руб.",
+                image: "https://yandex.ru/images/search?pos=21&from=tabbar&img_url=https%3A%2F%2Fmain-cdn.sbermegamarket.ru%2Fbig2%2Fhlr-system%2F1601229%2F100023631343b0.jpg&text=%D1%81%D1%82%D1%83%D0%BB%D1%8C%D1%8F+%D1%88%D0%BA%D0%BE%D0%BB%D1%8C%D0%BD&rpt=simage&lr=213",
+                dimensions: "45x50x80 см",
+                weight: "7 кг",
+                colors: "8 вариантов",
+                material: "Гнутая фанера, металлокаркас"
+            },
+            3: {
+                title: "Шкафы для классов",
+                description: "Вместительные шкафы для хранения учебных материалов и личных вещей. Имеют несколько отделений, полки и крючки для одежды. Надежные замки обеспечивают сохранность содержимого.",
+                price: "от 8 900 руб.",
+                image: "https://yandex.ru/images/search?pos=2&from=tabbar&img_url=https%3A%2F%2Fi.baraholka.com.ru%2Ffiles%2F2%2F0%2F2045190_7.jpg&text=%D1%88%D0%BA%D0%B0%D1%84%D1%8B+%D0%B4%D0%BB%D1%8F+%D0%BA%D0%BB%D0%B0&rpt=simage&lr=213",
+                dimensions: "180x40x200 см",
+                weight: "60 кг",
+                colors: "4 варианта",
+                material: "ЛДСП, металлическая фурнитура"
+            },
+            4: {
+                title: "Стол учителя",
+                description: "Функциональный и просторный стол с системой хранения документов. Вместительные ящики и полки позволяют организовать рабочее пространство максимально эффективно.",
+                price: "от 12 500 руб.",
+                image: "https://www.yandex.ru/images/search?text=%D1%81%D1%82%D0%BE%D0%BB+%D1%83%D1%87%D0%B8%D1%82%D0%B5%D0%BB%D1%8F&img_url=https%3A%2F%2Felles.top%2Fuploads%2Fposts%2F2023-03%2F1679934126_elles-top-p-stol-pismennii-uglovoi-s-tumboi-ofisnii-kr-45.jpg&pos=0&rpt=simage&serp_list_type=ideas&stype=image&lr=213&parent-reqid=1756961075735176-3911619114659873237-balancer-l7leveler-kubr-yp-klg-153-BAL&source=serp",
+                dimensions: "140x70x75 см",
+                weight: "45 кг",
+                colors: "3 варианта",
+                material: "Массив дуба, металлокаркас"
+            },
+            5: {
+                title: "Компьютерные столы",
+                description: "Специализированные столы для компьютерных классов с cable-менеджментом. Имеют специальные отделения для системного блока, выдвижную полку для клавиатуры и отверстия для проводов.",
+                price: "от 7 800 руб.",
+                image: "https://yandex.ru/images/search?pos=15&from=tabbar&img_url=https%3A%2F%2Fadmclass.ru%2Fwp-content%2Fuploads%2F2015%2F11%2F%25D0%25A1%25D0%25A2%25D0%259A%25D0%25BC1-min-1.jpg&text=%D0%BA%D0%BE%D0%BC%D0%BF%D1%8C%D1%8E%D1%82%D0%B5%D1%80%D0%BD%D1%8B%D0%B9+%D1%81%D1%82%D0%BE%D0%BB%D1%8B+%D1%88%D0%BA%D0%BE%D0%BB%D0%B0&rpt=simage&lr=213",
+                dimensions: "120x70x75 см",
+                weight: "25 кг",
+                colors: "2 варианта",
+                material: "ЛДСП, металлические ножки"
+            },
+            6: {
+                title: "Лабораторные столы",
+                description: "Столы для кабинетов химии и физики с устойчивой к реактивам поверхностью. Оснащены розетками, подачей воды и газа. Имеют защитные бортики и ящики для оборудования.",
+                price: "от 15 300 руб.",
+                image: "https://yandex.ru/images/search?pos=4&from=tabbar&img_url=https%3A%2F%2Favatars.mds.yandex.net%2Fget-altay%2F4381564%2F2a00000178f87eeb325614e5ec468070b4b4%2FXXL&text=%D0%BB%D0%B0%D0%B1%D0%BE%D1%80%D0%B0%D1%82%D0%BE%D1%80%D0%BD%D1%8B%D0%B5+%D1%81%D1%82%D0%BE%D0%BB%D1%8B&rpt=simage&lr=213",
+                dimensions: "180x90x85 см",
+                weight: "85 кг",
+                colors: "Серый, бежевый",
+                material: "Пластик, нержавеющая сталь"
+            },
+            7: {
+                title: "Стеллажи для библиотеки",
+                description: "Вместительные стеллажи для школьных библиотек и медиатек. Регулируемые полки позволяют размещать книги разных форматов. Устойчивая конструкция обеспечивает безопасность.",
+                price: "от 9 700 руб.",
+                image: "https://yandex.ru/images/search?pos=1&from=tabbar&img_url=https%3A%2F%2Fsun9-20.userapi.com%2Fimpg%2FtLI8Vke7VRO4uNP_SydSmDZ7KOmEQ6Z3kivqlA%2FzILr8-B6zdY.jpg%3Fsize%3D807x536%26quality%3D96%26sign%3D2c5572d4d2780276f8bf29a0976cad44%26c_uniq_tag%3DALrKFJQlq7OAis9lzR2Xoqb2qt5mDLwsYtsdHwXLReM%26type%3Dalbum&text=%D1%81%D1%82%D0%B5%D0%BB%D0%BB%D0%B0%D0%B6%D0%B8+%D0%B4%D0%BB%D1%8F+%D0%B1%D0%B8%D0%B1%D0%BB%D0%B8%D0%BE%D1%82%D0%B5%D0%BA%D0%B8&rpt=simage&lr=213",
+                dimensions: "200x40x210 см",
+                weight: "70 кг",
+                colors: "4 варианта",
+                material: "ЛДСП, металлический каркас"
+            },
+            8: {
+                title: "Мебель для учительской",
+                description: "Комфортная мебель для комнаты отдыха преподавателей. Включает диваны, кресла, кофейные столы и шкафы для личных вещей. Создает уютную атмосферу для отдыха между уроками.",
+                price: "от 18 900 руб.",
+                image: "https://yandex.ru/images/search?pos=4&from=tabbar&img_url=https%3A%2F%2Fvc-o.ru%2Fupload%2Fiblock%2Fefe%2Fdnje2x85dbxu82g3vzsbvchaq32e6xiv.png&text=%D0%BC%D0%B5%D0%B1%D0%B5%D0%BB%D1%8C+%D0%B4%D0%BB%D1%8F+%D1%83%D1%87%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D1%81%D0%BA%D0%BE%D0%B9&rpt=simage&lr=213",
+                dimensions: "Разные размеры",
+                weight: "Зависит от предмета",
+                colors: "6 вариантов",
+                material: "Ткань, дерево, поролон"
+            },
+            9: {
+                title: "Мебель для актового зала",
+                description: "Стильные и удобные кресла и стулья для актовых залов. Складывающаяся конструкция позволяет экономить пространство. Имеют мягкие сиденья и удобные подлокотники.",
+                price: "от 4 200 руб./шт",
+                image: "https://yandex.ru/images/search?pos=23&from=tabbar&img_url=https%3A%2F%2Fhappyhouse.guru%2Fuploads%2Fposts%2F2023-03%2F1679134414_happyhouse-guru-p-kresla-dlya-zritelnogo-zala-doma-kulturi-k-31.jpg&text=%D0%BC%D0%B5%D0%B1%D0%B5%D0%BB%D1%8C+%D0%B4%D0%BB%D1%8F+%D0%B0%D0%BA%D1%82%D0%BE%D0%B2%D0%BE%D0%B3%D0%BE&rpt=simage&lr=213",
+                dimensions: "55x50x85 см",
+                weight: "8 кг",
+                colors: "Красный, синий, зеленый, черный",
+                material: "Пластик, тканевая обивка"
+            },
+            10: {
+                title: "Спортивные скамейки",
+                description: "Прочные скамейки для раздевалок и спортивных залов. Влагостойкое покрытие легко очищается. Металлический каркас обеспечивает долговечность и устойчивость.",
+                price: "от 6 500 руб.",
+                image: "https://yandex.ru/images/search?pos=7&from=tabbar&img_url=https%3A%2F%2Fjaguar-sport.ru%2Fimage%2Fcache%2Fcatalog%2Fi%2Ffj%2Fkd%2F38e358e58f68b546a7d713c4a6eee33e-1500x1500.jpg&text=%D1%81%D0%BF%D0%BE%D1%80%D1%82%D0%B8%D0%B2%D0%BD%D1%8B%D0%B5+%D1%81%D0%BA%D0%B0%D0%BC%D0%B5%D0%B9%D0%BA%D0%B8&rpt=simage&lr=213",
+                dimensions: "120x40x45 см",
+                weight: "12 кг",
+                colors: "2 варианта",
+                material: "Влагостойкая фанера, металл"
+            },
+            11: {
+                title: "Мебель для столовой",
+                description: "Столы и стулья для школьных столовых из износостойких материалов. Устойчивы к влаге и частой cleaning. Закругленные углы обеспечивают безопасность учащихся.",
+                price: "от 5 800 руб.",
+                image: "https://yandex.ru/images/search?pos=1&from=tabbar&img_url=https%3A%2F%2Fidei.club%2Fraznoe%2Fuploads%2Fposts%2F2023-06%2F1685617431_idei-club-p-mebel-dlya-stolovoi-shkoli-dizain-vkontakt-60.jpg&text=%D0%BC%D0%B5%D0%B1%D0%B5%D0%BB%D1%8C+%D0%B4%D0%BB%D1%8F+%D1%81%D1%82%D0%BE%D0%BB%D0%BE%D0%B2%D0%BE%D0%B9&rpt=simage&lr=213",
+                dimensions: "Стол: 160x80x75 см, Стул: 45x45x85 см",
+                weight: "Стол: 25 кг, Стул: 6 кг",
+                colors: "Желтый, зеленый, оранжевый",
+                material: "Пластик, металлокаркас"
+            },
+            12: {
+                title: "Мебель для дошкольников",
+                description: "Яркая и безопасная мебель для детских садов и начальных классов. Имеет закругленные углы, экологичные покрытия и соответствующие возрасту размеры. Способствует развитию и комфорту детей.",
+                price: "от 4 900 руб.",
+                image: "https://yandex.ru/images/search?text=%D0%BC%D0%B5%D0%B1%D0%B5%D0%BB%D1%8C+%D0%B4%D0%BB%D1%8F+%D0%BD%D0%B0%D1%87%D0%B0%D0%BB%D0%BA%D0%B8&pos=29&rpt=simage&img_url=https%3A%2F%2Fregion-peterburg.ru%2Fupload%2Fiblock%2Ffdd%2Fakxek47hef5eoma3vjf8iw6qxbm14vsz%2F61448be16f6a9_KR_18.PNG&from=tabbar&lr=213",
+                dimensions: "Парта: 100x50x55 см, Стул: 30x30x35 см",
+                weight: "Парта: 12 кг, Стул: 3 кг",
+                colors: "Яркие цвета",
+                material: "Массив березы, безопасные краски"
+            }
+        };
+
+        // Функции для модального окна
+        const modal = document.getElementById("productModal");
+        const span = document.getElementsByClassName("close")[0];
+        const detailsButtons = document.querySelectorAll('.details-btn');
+
+        detailsButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const productId = this.closest('.product-card').getAttribute('data-id');
+                openModal(productId);
+            });
+        });
+
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+
+        function openModal(productId) {
+            const product = products[productId];
+            if (product) {
+                document.getElementById("modal-title").textContent = product.title;
+                document.getElementById("modal-description").textContent = product.description;
+                document.getElementById("modal-price").textContent = product.price;
+                document.getElementById("modal-image").src = product.image;
+                document.getElementById("modal-dimensions").textContent = `Размеры: ${product.dimensions}`;
+                document.getElementById("modal-weight").textContent = `Вес: ${product.weight}`;
+                document.getElementById("modal-colors").textContent = `Доступные цвета: ${product.colors}`;
+                document.getElementById("modal-material").textContent = `Материал: ${product.material}`;
+                
+                modal.style.display = "block";
+            }
+        }
+
+        function calculatePrice() {
+            const productSelect = document.getElementById('product');
+            const quantityInput = document.getElementById('quantity');
+            const colorSelect = document.getElementById('color');
+            const resultDiv = document.getElementById('result');
+            
+            const productPrice = parseFloat(productSelect.value);
+            const quantity = parseInt(quantityInput.value);
+            const colorMultiplier = parseFloat(colorSelect.value);
+            
+            if (isNaN(quantity) || quantity < 1) {
+                resultDiv.textContent = 'Пожалуйста, введите корректное количество';
+                return;
+            }
+            
+            const totalPrice = productPrice * quantity * colorMultiplier;
+            resultDiv.textContent = `Общая стоимость: ${totalPrice.toFixed(2)} руб.`;
+        }
+        
+        function sendMessage() {
+            const nameInput = document.getElementById('name');
+            const emailInput = document.getElementById('email');
+            const messageInput = document.getElementById('message');
+            
+            if (!nameInput.value || !emailInput.value || !messageInput.value) {
+                alert('Пожалуйста, заполните все поля');
+                return;
+            }
+            
+            alert('Сообщение отправлено! Мы свяжемся с вами в ближайшее время.');
+            nameInput.value = '';
+            emailInput.value = '';
+            messageInput.value = '';
+        }
+    </script>
+</body>
+</html>
